@@ -58,7 +58,7 @@ a {
     color: var(--color_heading);
 }
 
-.container {
+.contaier {
     width: 90%;
     margin: 0 auto;
     max-width: 1350px;
