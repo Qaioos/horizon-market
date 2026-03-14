@@ -1,4 +1,4 @@
-import Btmheader from "./Components/header/Btmheader";
+import Btmheader from "./Components/header/BtmHeader";
 import TopHeader from "./Components/header/TopHeader";
 
 function App() {
@@ -8,6 +8,8 @@ function App() {
         <TopHeader/>
         <Btmheader/>
       </header>
+
+
       </>
     )
 }

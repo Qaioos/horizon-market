@@ -1,8 +1,9 @@
+
 import React from "react";
 import logo from "../../img/logo.png";
 
 // Css Module
-import './header.css'
+import '../../css/header.css'
 //React Router
 import { Link } from "react-router-dom";
 
@@ -15,7 +16,7 @@ import { TiShoppingCart } from "react-icons/ti";
 export default function TopHeader() {
     return (
         <div className="top_header">
-            <div className="contaier">
+            <div className="container">
                 <Link to="/" className="logo">
                     <img src={logo} alt="logo" />
                 </Link>
