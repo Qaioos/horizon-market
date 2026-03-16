@@ -17,7 +17,7 @@ function HeroSlider() {
                     <Swiper
                     loop={true}
                         autoplay={{
-                            delay: 1500,
+                            delay: 2000,
                             disableOnInteraction: false,
                         }}
                         pagination={
