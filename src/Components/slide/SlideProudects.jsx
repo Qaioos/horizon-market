@@ -14,7 +14,7 @@ import Proudects from "./Proudects";
 import "../../css/slideProduct.css";
 
 function SlideProudects({ data, title }) {
-    console.log(data);
+  
 
     return (
         <div className="slide_products slide">

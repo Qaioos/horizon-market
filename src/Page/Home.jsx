@@ -6,10 +6,17 @@ import SlideProudects from "../Components/slide/SlideProudects";
 
 const Categories = [
     "smartphones",
+    "mobile-accessories",
     "laptops",
     "tablets",
     "sunglasses",
     "sports-accessories",
+    "mens-shirts",
+    "mens-shoes",
+    "mens-watches",
+    "beauty",
+    "womens-jewellery",
+    "fragrances",
 ];
 
 function Home() {
@@ -45,7 +52,7 @@ function Home() {
 
             {loading ? (<p>Loading...</p>) : (
                 Categories.map((cate) => {
-                    return <SlideProudects key={cate} data={products[cate]} title={`${cate} products`} />
+                    return <SlideProudects key={cate} data={products[cate]} title={`${cate.replace("-"," ")} products`} />
                 })
             )}
         </>

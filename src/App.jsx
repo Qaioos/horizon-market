@@ -1,6 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import Btmheader from "./Components/header/BtmHeader";
 import TopHeader from "./Components/header/TopHeader";
 import Home from "./Page/Home";
+import  ProductDetails from "./Page/ProductsDetails";
 
 
 function App() {
@@ -10,8 +12,12 @@ function App() {
         <TopHeader/>
         <Btmheader/>
       </header>
-      <Home/>
-      </>
+
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/products/:id" element={<ProductDetails/>}/>
+      </Routes>
+    </>
     )
 }
 
