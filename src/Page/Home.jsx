@@ -3,6 +3,7 @@ import HeroSlider from "../Components/HeroSlider";
 
 import "../css/home.css";
 import SlideProudects from "../Components/slide/SlideProudects";
+import LoadingSlide from "../Components/loading/LoadingSlide";
 
 const Categories = [
     "smartphones",
@@ -50,7 +51,7 @@ function Home() {
         <>
             <HeroSlider />
 
-            {loading ? (<p>Loading...</p>) : (
+            {loading ? (<LoadingSlide/>) : (
                 Categories.map((cate) => {
                     return <SlideProudects key={cate} data={products[cate]} title={`${cate.replace("-"," ")} products`} />
                 })
@@ -60,3 +61,4 @@ function Home() {
 }
 
 export default Home;
+

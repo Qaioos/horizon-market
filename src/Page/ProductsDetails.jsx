@@ -7,6 +7,8 @@ import SlideProudects from "../Components/slide/SlideProudects";
 //React  Icons
 import { FaStar, FaStarHalfAlt, FaShare, FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
+import LodingDetails from "../Components/loading/LoadingDetails";
+import LoadingSlide from "../Components/loading/LoadingSlide";
 
 function ProductDetails() {
     const { id } = useParams();
@@ -58,7 +60,15 @@ if (product != null) {
 
     },[isloding]);
 
-    if (isloding) return <p>Loding...</p>;
+    if (isloding){
+    return (
+        <>
+    <LodingDetails/>
+    <LoadingSlide/>
+        </>
+);
+}
+        
     if (!product) return <p>Not Found</p>;
     return (
         <div className="item_details">
@@ -69,7 +79,8 @@ if (product != null) {
                     <div className="sm_img">
                         {product.images.map((img, index) => {
                             return (
-                                <img
+                                <img 
+                                    className="img_div_sm"
                                     key={index}
                                     src={img}
                                     alt={product.title}
