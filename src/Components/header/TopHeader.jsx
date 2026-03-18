@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../img/logo.png";
 
 // Css Module
@@ -12,8 +12,12 @@ import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { TiShoppingCart } from "react-icons/ti";
 
+//React Component
+import { CartContext } from "../Contexts/CartContext";
+
 
 export default function TopHeader() {
+    const  {cartitems} = useContext(CartContext)
     return (
         <div className="top_header">
             <div className="container">
@@ -41,7 +45,7 @@ export default function TopHeader() {
 
                     <div className="icon">
                         <TiShoppingCart />
-                        <span className="count">0</span>
+                        <span className="count">{cartitems.length}</span>
                     </div>
                 </div>
             </div>

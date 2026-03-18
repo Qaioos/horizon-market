@@ -9,13 +9,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 //Components
-import Proudects from "./Proudects";
+import Proudects from "../../Page/Proudects";
 //Css
 import "../../css/slideProduct.css";
 
 function SlideProudects({ data, title }) {
-  
-
     return (
         <div className="slide_products slide">
             <div className="container">
