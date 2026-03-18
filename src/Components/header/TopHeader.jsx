@@ -1,9 +1,8 @@
-
 import React, { useContext } from "react";
 import logo from "../../img/logo.png";
 
 // Css Module
-import '../../css/header.css'
+import "../../css/header.css";
 //React Router
 import { Link } from "react-router-dom";
 
@@ -15,9 +14,9 @@ import { TiShoppingCart } from "react-icons/ti";
 //React Component
 import { CartContext } from "../Contexts/CartContext";
 
-
 export default function TopHeader() {
-    const  {cartitems} = useContext(CartContext)
+    const { cartitems } = useContext(CartContext);
+    
     return (
         <div className="top_header">
             <div className="container">
@@ -44,8 +43,10 @@ export default function TopHeader() {
                     </div>
 
                     <div className="icon">
-                        <TiShoppingCart />
-                        <span className="count">{cartitems.length}</span>
+                        <Link to="/cart">
+                            <TiShoppingCart />
+                            <span className="count">{cartitems.length}</span>
+                        </Link>
                     </div>
                 </div>
             </div>

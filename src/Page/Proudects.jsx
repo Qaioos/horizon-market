@@ -49,7 +49,7 @@ function Proudects({ item }) {
                 </p>
             </Link>
             <div className="icons">
-                <span onClick={() => addToCart(item)}>
+                <span onClick={() => addToCart(item)} >
                     <FaCartArrowDown />
                 </span>
                 <span>

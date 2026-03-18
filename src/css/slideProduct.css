@@ -129,6 +129,7 @@
     background: var(--main_color);
     pointer-events: none;
   }
+
   .product.in-cart .icons .btn_addtocart svg{
     fill: var(--white_color);
   }
@@ -173,10 +174,6 @@
   .prodcuts_loading{
     display: flex;
     gap: 30px;
-  }
-
-  .prodcuts_loading .img_product{
-
   }
 
   .prodcuts_loading  .content{
