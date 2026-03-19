@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 
 //React Router
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //React  Icons
 import {
@@ -17,11 +17,30 @@ import {
 //React Component
 import ProductDetails from "./ProductsDetails";
 import { CartContext } from "../Components/Contexts/CartContext";
+import toast from "react-hot-toast";
 //css
 
 function Proudects({ item }) {
+    const navigate = useNavigate()
     const { cartitems, addToCart } = useContext(CartContext);
     const isInCart = cartitems.some((i) => i.id === item.id);
+
+    const handelAddToCart = () => {
+        addToCart(item);
+        toast.success(
+        <div className="stoast-wrapper">
+            <img src={item.images[0]} alt="" className="toast-img" />
+            <div className="toast-content">
+                <strong>{item.title}</strong>
+                added to cart
+                <div>
+                    <button className="btn" onClick={() =>navigate('/cart')}>View Cart</button>
+                </div>
+            </div>
+        </div>
+        ,{duration: 3000}
+        );
+    };
 
     return (
         <div className={`product ${isInCart ? "in-cart" : ""}`}>
@@ -49,7 +68,7 @@ function Proudects({ item }) {
                 </p>
             </Link>
             <div className="icons">
-                <span onClick={() => addToCart(item)} >
+                <span onClick={() => handelAddToCart()}>
                     <FaCartArrowDown />
                 </span>
                 <span>
