@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 //Components
-import Proudects from "../../Page/Proudects";
+import Proudects from "../../Page/Products/Proudects";
 //Css
 import "../../css/slideProduct.css";
 

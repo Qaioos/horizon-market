@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import HeroSlider from "../Components/HeroSlider";
+import HeroSlider from "../../Components/HeroSlider";
 
-import "../css/home.css";
-import SlideProudects from "../Components/slide/SlideProudects";
-import LoadingSlide from "../Components/loading/LoadingSlide";
+import "./home.css";
+import SlideProudects from "../../Components/slide/SlideProudects";
+import LoadingSlide from "../../Components/loading/LoadingSlide";
 
 const Categories = [
     "smartphones",
