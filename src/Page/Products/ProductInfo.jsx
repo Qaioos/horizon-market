@@ -5,9 +5,11 @@ import { TiShoppingCart } from "react-icons/ti";
 import { CartContext } from "../../Components/Contexts/CartContext";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { Favoret } from "../../Components/Contexts/FavoretContext";
 
 export default function ProductInfo({ product }) {
     const { cartitems, addToCart } = useContext(CartContext);
+    const { favitems, addToFav ,removeFav} = useContext(Favoret);
     const Navigate = useNavigate()
         const isInCart = cartitems.some((i) => i.id === product.id);
 
@@ -32,6 +34,19 @@ export default function ProductInfo({ product }) {
             { duration: 3000 },
         );
     };
+
+    const isInFav = favitems.some((i) => i.id === product.id);
+    const handelAddToFav =()=>{
+        if(isInFav){
+            toast.error(`${product.title} Remove from Favoreties`)
+            removeFav(product.id)
+ 
+        }else{
+            toast.success(`${product.title} added to favoreties`)
+            addToFav(product)
+        }
+    }
+
 
     return (
         <div className="details_item">
@@ -63,7 +78,7 @@ export default function ProductInfo({ product }) {
                {isInCart? 'Item i Cart' :  " Add to cart"} <TiShoppingCart />
             </button>
             <div className="icons">
-                <span>
+                <span onClick={()=> handelAddToFav()} className={` ${isInFav ? 'in-fav' : ""}`}>
                     <FaRegHeart />
                 </span>
                 <span>

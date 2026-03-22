@@ -18,11 +18,14 @@ import {
 import ProductDetails from "./ProductsDetails";
 import { CartContext } from "../../Components/Contexts/CartContext";
 import toast from "react-hot-toast";
+import { Favoret } from "../../Components/Contexts/FavoretContext";
 //css
 
 function Proudects({ item }) {
     const navigate = useNavigate();
     const { cartitems, addToCart } = useContext(CartContext);
+    const { favitems, addToFav ,removeFav } = useContext(Favoret);
+
     const isInCart = cartitems.some((i) => i.id === item.id);
 
     const handelAddToCart = () => {
@@ -46,6 +49,20 @@ function Proudects({ item }) {
             { duration: 3000 },
         );
     };
+
+    // Check if the item in the fav
+    const isInFav = favitems.some((i) => i.id === item.id);
+    //  Add to Favoret 
+    const handelAddToFav =()=>{
+        if(isInFav){
+            toast.error(`${item.title} Remove from Favoreties`)
+            removeFav(item.id)
+ 
+        }else{
+            toast.success(`${item.title} added to favoreties`)
+            addToFav(item)
+        }
+    }
     return (
         <div className={`product ${isInCart ? "in-cart" : ""}`}>
             <Link to={`/products/${item.id}`}>
@@ -72,10 +89,10 @@ function Proudects({ item }) {
                 </p>
             </Link>
             <div className="icons">
-                <span onClick={() => handelAddToCart()} className="">
+                <span onClick={() => handelAddToCart()} className="btn_addtocart">
                     <FaCartArrowDown />
                 </span>
-                <span>
+                <span onClick={() => handelAddToFav()} className={`${isInFav ? "in-fav" :""}`}>
                     <FaRegHeart />
                 </span>
                 <span>
