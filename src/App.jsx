@@ -7,6 +7,8 @@ import Cart from "./Page/cart/Cart";
 // React hot Toast
 import { Toaster } from "react-hot-toast";
 import Scroll from "./Components/Scroll";
+import { AnimatePresence } from "framer-motion";
+import CategoryPage from "./Page/CategoryPage/CategoryPage";
 
 function App() {
     return (
@@ -30,11 +32,16 @@ function App() {
 
             <Scroll />
 
+
+            <AnimatePresence mode="wait">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/products/:id" element={<ProductDetails />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/category/:category" element={<CategoryPage />} />
+
             </Routes>
+            </AnimatePresence>
         </>
     );
 }

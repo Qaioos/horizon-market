@@ -9,6 +9,7 @@ import LodingDetails from "../../Components/loading/LoadingDetails";
 import LoadingSlide from "../../Components/loading/LoadingSlide";
 import ProductsImgs from "./ProductsImgs";
 import ProductInfo from "./ProductInfo";
+import PageTransition from "../../Components/PageTransition";
 
 function ProductDetails() {
     const { id } = useParams();
@@ -61,6 +62,8 @@ function ProductDetails() {
     }
 
     return (
+        <PageTransition key={id}>
+
         <div>
             {isloding ? (
                 <>
@@ -86,6 +89,8 @@ function ProductDetails() {
                 />
             )}
         </div>
+        </PageTransition>
+
     );
 }
 

@@ -5,7 +5,7 @@ import { IoMenu } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { PiSignInBold } from "react-icons/pi";
 import { FaUserPlus } from "react-icons/fa6";
-import '../../css/header.css'
+import "../../css/header.css";
 // The Nav Links Mabing
 const NavLinks = [
     { title: "Home", link: "/" },
@@ -16,9 +16,14 @@ const NavLinks = [
 ];
 
 export default function Btmheader() {
-    const location = useLocation()
+    const location = useLocation();
     const [categories, setcategories] = useState([]);
-    const [isOpen , setisOpen] = useState(false)
+    const [isOpen, setisOpen] = useState(false);
+
+    //close the Category_btn
+    useEffect(() => {
+        setisOpen(false);
+    }, [location]);
 
     useEffect(() => {
         fetch("https://dummyjson.com/products/categories")
@@ -31,32 +36,56 @@ export default function Btmheader() {
             <div className="container">
                 <nav className="nav">
                     <div className="category_nav">
-                        <div className="category_btn" onClick={()=>setisOpen(!isOpen)}>
+                        <div
+                            className="category_btn"
+                            onClick={() => setisOpen(!isOpen)}
+                        >
                             <p>
-                            <IoMenu />
+                                <IoMenu />
                                 Browse Catgory
                                 <IoMdArrowDropdown />
                             </p>
                         </div>
 
-                        <div className={`category_nav_list ${isOpen ? 'active' : ""}`}>
+                        <div
+                            className={`category_nav_list ${isOpen ? "active" : ""}`}
+                        >
                             {categories.map((cat) => {
-                                return <Link key={cat.slug} to={cat.slug}> {cat.name} </Link>;
+                                return (
+                                    <Link key={cat.slug} to={`category/${cat.slug}`}>
+                                        {" "}
+                                        {cat.name}{" "}
+                                    </Link>
+                                );
                             })}
                         </div>
                     </div>
                     <div className="nav_links">
                         {NavLinks.map((el) => {
-                            return <li key={el.link} className={location.pathname === el.link ? "active" :"" }><Link to={el.link}>{el.title}</Link></li>;
+                            return (
+                                <li
+                                    key={el.link}
+                                    className={
+                                        location.pathname === el.link
+                                            ? "active"
+                                            : ""
+                                    }
+                                >
+                                    <Link to={el.link}>{el.title}</Link>
+                                </li>
+                            );
                         })}
                     </div>
                 </nav>
                 <div className="sign_regs_icon">
-                    <Link to="/"><PiSignInBold/></Link>
-                    <Link to="/"><FaUserPlus/></Link>
+                    <Link to="/">
+                        <PiSignInBold />
+                    </Link>
+                    <Link to="/">
+                        <FaUserPlus />
+                    </Link>
                 </div>
             </div>
         </div>
     );
 }
-

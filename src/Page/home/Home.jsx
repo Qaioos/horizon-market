@@ -4,6 +4,7 @@ import HeroSlider from "../../Components/HeroSlider";
 import "./home.css";
 import SlideProudects from "../../Components/slide/SlideProudects";
 import LoadingSlide from "../../Components/loading/LoadingSlide";
+import PageTransition from "../../Components/PageTransition";
 
 const Categories = [
     "smartphones",
@@ -27,38 +28,52 @@ function Home() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const  results = await Promise.all(
-                    Categories.map(async(cate)=>{
-                        const response = await fetch(`https://dummyjson.com/products/category/${cate}`);
+                const results = await Promise.all(
+                    Categories.map(async (cate) => {
+                        const response = await fetch(
+                            `https://dummyjson.com/products/category/${cate}`,
+                        );
                         const data = await response.json();
-                        return {[cate]: data.products}
-                    })
-                )
-                const productsData = Object.assign({},...results)
+                        return { [cate]: data.products };
+                    }),
+                );
+                const productsData = Object.assign({}, ...results);
 
                 setProducts(productsData);
             } catch (error) {
                 console.error("Error fetching products:", error);
             } finally {
-                setLoading(false)
+                setLoading(false);
             }
         };
         fetchProducts();
     }, []);
 
-
     return (
         <>
-            <HeroSlider />
+            <PageTransition>
+                <HeroSlider />
 
-            {loading ? (<LoadingSlide/>) : (
-                Categories.map((cate) => {
-                    return <SlideProudects key={cate} data={products[cate]} title={`${cate.replace("-"," ")} products`} />
-                })
-            )}
+                {loading ? (
+                    <LoadingSlide />
+                ) : (
+                    Categories.map((cate) => {
+                        return (
+            <PageTransition>
+
+                            <SlideProudects
+                                key={cate}
+                                data={products[cate]}
+                                title={`${cate.replace("-", " ")} products`}
+                            />
+            </PageTransition>
+
+                        );
+                    })
+                )}
+            </PageTransition>
         </>
     );
 }
 
 export default Home;
-
