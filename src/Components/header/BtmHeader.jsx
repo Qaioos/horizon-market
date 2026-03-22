@@ -43,7 +43,7 @@ export default function Btmheader() {
                             <p>
                                 <IoMenu />
                                 Browse Catgory
-                                <IoMdArrowDropdown />
+                                
                             </p>
                         </div>
 
