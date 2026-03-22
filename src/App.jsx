@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import Scroll from "./Components/Scroll";
 import { AnimatePresence } from "framer-motion";
 import CategoryPage from "./Page/CategoryPage/CategoryPage";
+import Favorites from "./Page/Favorites/Favorites";
 
 function App() {
     return (
@@ -38,6 +39,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/products/:id" element={<ProductDetails />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/favorites" element={<Favorites />} />
                 <Route path="/category/:category" element={<CategoryPage />} />
 
             </Routes>
