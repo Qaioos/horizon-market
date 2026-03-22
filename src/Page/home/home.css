@@ -11,6 +11,13 @@
     left: 5%;
 }
 
+/* Added those lines becuse the Faavorites Page   */
+.swiper-slide {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 40px;
+}
 .swiper-slide .content h4{
     text-transform: uppercase;
     font-size: 1vw; 

@@ -13,9 +13,11 @@ import { TiShoppingCart } from "react-icons/ti";
 
 //React Component
 import { CartContext } from "../Contexts/CartContext";
+import { Favoret } from "../Contexts/FavoretContext";
 
 export default function TopHeader() {
     const { cartitems } = useContext(CartContext);
+    const { favitems } = useContext(Favoret);
     
     return (
         <div className="top_header">
@@ -38,8 +40,10 @@ export default function TopHeader() {
 
                 <div className="header_icons">
                     <div className="icon">
+                        <Link to="/favorites">
                         <FaRegHeart />
-                        <span className="count">0</span>
+                        <span className="count">{favitems.length}</span>
+                        </Link>
                     </div>
 
                     <div className="icon">
