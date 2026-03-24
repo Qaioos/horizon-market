@@ -21,6 +21,11 @@ body{
   font-family: "Inter", sans-serif;
   padding-top: 150px;
 }
+@media (max-width:720px) {
+  body{
+  padding-top: 50px;
+  }
+}
 
 img{
   width: 100%;

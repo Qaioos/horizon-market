@@ -1,10 +1,36 @@
-.hero{
+.hero {
     position: relative;
     margin-bottom: 80px;
     padding-top: 20px;
 }
+@media (max-width: 720px) {
+    .hero {
+        margin-top: 10px;
+    margin-bottom: 1px;
+        padding-top: 20px;
+    }
+    .hero .container {
+        width: 300px;
+    }
+    .hero .container .swiper-slide {
+        height: 300px;
+    }
+    .hero .container .swiper-slide .content h4 {
+        font-size: 15px;
+    }
+    .hero .container .swiper-slide .content h3 {
+        font-size: 15px;
+    }
+    .hero .container .swiper-slide .content p {
+        font-size: 10px;
+    }
+    .hero .container .swiper-slide img{
+        width: 320px;
+        height: 250px;
+    }
+}
 
-.swiper-slide .content{
+.swiper-slide .content {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -18,15 +44,15 @@
     flex-wrap: wrap;
     gap: 40px;
 }
-.swiper-slide .content h4{
+.swiper-slide .content h4 {
     text-transform: uppercase;
-    font-size: 1vw; 
+    font-size: 1vw;
     font-style: italic;
     font-weight: normal;
     margin-bottom: 0.4vw;
 }
 
-.swiper-slide .content h3{
+.swiper-slide .content h3 {
     font-size: 3vw;
     text-transform: capitalize;
     margin-bottom: 30px;
@@ -35,7 +61,7 @@
     line-height: 1.1;
 }
 
-.swiper-slide .content p{
+.swiper-slide .content p {
     font-size: 1.1vw;
     margin-top: 2.5vw;
     margin-bottom: 2.5vw;

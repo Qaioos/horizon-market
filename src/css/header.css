@@ -7,6 +7,17 @@ header {
     background: var(--white_color);
 }
 
+@media (max-width: 720px){
+    header {
+    position:static;
+
+        display: flex;
+    flex-direction: column-reverse;
+}
+    
+}
+
+
 .top_header .container {
     display: flex;
     align-items: center;
@@ -70,10 +81,18 @@ header {
 }
 @media (max-width: 720px) {
     .top_header .header_icons{
+        position: fixed;
+        top: 28px;
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-top: 5px;
+        z-index: 99999;
     }
+    .top_header .header_icons svg{
+
+        fill: var(--white_color);
+    }
+
 }
 
 .top_header .header_icons .icon {
@@ -110,6 +129,11 @@ header {
     .btm_header .container{
         flex-wrap: wrap;
     }
+.btm_header{
+    position: fixed;
+    top: 0;
+    z-index: 23213;
+}
 }
 
 .btm_header .nav {
@@ -237,7 +261,7 @@ header {
 .suggestions {
     position: absolute;
     background: #fff;
-    width: 100%;
+    width: 30%;
     list-style: none;
     border: 1px solid var(--border_color);
 }
