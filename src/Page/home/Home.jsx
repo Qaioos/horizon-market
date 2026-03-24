@@ -59,7 +59,7 @@ function Home() {
                 ) : (
                     Categories.map((cate) => {
                         return (
-            <PageTransition>
+            <PageTransition key={cate}>
 
                             <SlideProudects
                                 key={cate}
