@@ -7,13 +7,13 @@ import "../../css/header.css";
 import { Link } from "react-router-dom";
 
 //React Icons
-import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { TiShoppingCart } from "react-icons/ti";
 
 //React Component
 import { CartContext } from "../Contexts/CartContext";
 import { Favoret } from "../Contexts/FavoretContext";
+import SerachBox from "./SerachBox";
 
 export default function TopHeader() {
     const { cartitems } = useContext(CartContext);
@@ -25,19 +25,7 @@ export default function TopHeader() {
                 <Link to="/" className="logo">
                     <img src={logo} alt="logo" />
                 </Link>
-
-                <form action="" className="search_box">
-                    <input
-                        type="text"
-                        name="search"
-                        id="search"
-                        placeholder="search for products"
-                    />
-                    <button type="submit">
-                        <FaSearch />
-                    </button>
-                </form>
-
+                <SerachBox/>
                 <div className="header_icons">
                     <div className="icon">
                         <Link to="/favorites">
