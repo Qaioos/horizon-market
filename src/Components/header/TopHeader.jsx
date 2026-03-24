@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import logo from "../../img/logo.png";
+import logo from "../../img/logo2.jpg";
 
 // Css Module
 import "../../css/header.css";
