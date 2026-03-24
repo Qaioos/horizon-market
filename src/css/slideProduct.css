@@ -3,7 +3,7 @@
   }
   @media (max-width: 720px) {
   .slide_products {
-    padding: 30px 0;
+    padding: 10px 0;
   }
   }
 
@@ -50,6 +50,12 @@
     border-radius: 5px;
     position: relative;
     overflow: hidden;
+  }
+  @media (max-width:720px) {
+    .product{
+      width: 100%;
+      padding: 2px 2px;
+    }
   }
   .product:hover{
     border-color: var(--main_color);
@@ -179,7 +185,14 @@
     display: flex;
     gap: 30px;
   }
-
+  @media (max-width: 720px){
+      .prodcuts_loading{
+        flex-wrap: wrap;
+      }
+      .loading_SlideProduct .top_slide p{
+        width: 100%;
+      }
+  }
   .prodcuts_loading  .content{
     height: 30px;
     margin-bottom: 10px;

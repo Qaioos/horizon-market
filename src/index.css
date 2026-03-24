@@ -94,7 +94,11 @@ a{
   background-position: left -40px top 0;
   animation: shine 1s ease infinite;
 }
-
+@media (max-width:720px) {
+  .skeltion p{
+    width: 100%;
+  }
+}
 @keyframes shine{
   to{
     background-position: right -40px top 0;

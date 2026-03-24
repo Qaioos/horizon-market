@@ -28,7 +28,16 @@ function SlideProudects({ data, title }) {
                     delay: 2000,
                     disableOnInteraction: false,
                 }}
-                slidesPerView={5}
+                slidesPerView={2}
+                breakpoints={{
+                    1024:{
+                        slidesPerView:5,
+                    },
+                    640:{
+                        slidesPerView:3,
+                    }
+                }}
+
                 loop={true}
                 navigation={true}
                 modules={[Navigation, Autoplay]}

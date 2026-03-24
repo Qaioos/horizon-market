@@ -13,7 +13,7 @@ function LoadingSlide() {
                         <div className="product">
                             <div className="img_product skeltion"></div>
                             <div className="content skeltion"></div>
-                            <div className="content skeltion"></div>
+                            <div className="content "></div>
                         </div>
                         <div className="product">
                             <div className="img_product skeltion"></div>

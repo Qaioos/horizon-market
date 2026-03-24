@@ -128,11 +128,14 @@ header {
 @media (max-width: 720px) {
     .btm_header .container{
         flex-wrap: wrap;
+        width: 100%;
     }
 .btm_header{
     position: fixed;
     top: 0;
     z-index: 23213;
+    width: 100%;
+
 }
 }
 
@@ -145,7 +148,7 @@ header {
 @media (max-width: 720px) {
     .btm_header .nav{
         height: 35px;
-        width: 300px;
+        width: 100%;
     }
 }
 
@@ -264,6 +267,12 @@ header {
     width: 30%;
     list-style: none;
     border: 1px solid var(--border_color);
+    z-index: 9999999;
+}
+@media (max-width: 500px){
+    .suggestions{
+        width: 70%;
+    }
 }
 .suggestions li {
     padding: 5px 5px;

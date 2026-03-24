@@ -5,12 +5,13 @@
 }
 @media (max-width: 720px) {
     .hero {
+        width: 100%;
         margin-top: 10px;
     margin-bottom: 1px;
         padding-top: 20px;
     }
     .hero .container {
-        width: 300px;
+        width: 100%;
     }
     .hero .container .swiper-slide {
         height: 300px;
@@ -25,7 +26,7 @@
         font-size: 10px;
     }
     .hero .container .swiper-slide img{
-        width: 320px;
+        width: 100%;
         height: 250px;
     }
 }
