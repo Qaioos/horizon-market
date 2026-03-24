@@ -10,6 +10,7 @@ import Scroll from "./Components/Scroll";
 import { AnimatePresence } from "framer-motion";
 import CategoryPage from "./Page/CategoryPage/CategoryPage";
 import Favorites from "./Page/Favorites/Favorites";
+import SerachResult from "./Page/SerachPage/SerachResult";
 
 function App() {
     return (
@@ -41,6 +42,8 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/favorites" element={<Favorites />} />
                 <Route path="/category/:category" element={<CategoryPage />} />
+                <Route path="/search" element={<SerachResult />} />
+
 
             </Routes>
             </AnimatePresence>
