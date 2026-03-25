@@ -1,16 +1,25 @@
-# React + Vite
+# 🛒 Horizon Market
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Horizon Market is an advanced e-commerce application built with React and Redux Toolkit. It focuses on providing a seamless, fast, and fully responsive shopping experience across all devices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Features
 
-## React Compiler
+* Product Browsing: Dynamic product display with category filtering.
+* Shopping Cart System: Fully functional cart for adding/removing items, real-time quantity updates, and automatic total price calculation.
+* Modern UI/UX: Clean and professional interface designed for optimal user experience on mobile, tablet, and desktop.
+* State Management: Powered by React Hooks for consistent and predictable data flow throughout the application.
+* Fast Routing: SPA navigation using React Router for smooth page transitions without reloading.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+* Bundler: Vite (Fast Next-Generation Frontend Tooling)
+* Frontend Framework: React.js
+* State Management: React Hooks
+* Styling: Tailwind CSS / CSS Modules
+* Routing: React Router Dom
+* Data Fetching:  Fetch API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+** Start 
+npm run dev
